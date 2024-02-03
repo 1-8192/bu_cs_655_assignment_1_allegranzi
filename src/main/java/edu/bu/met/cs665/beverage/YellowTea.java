@@ -1,14 +1,27 @@
 package edu.bu.met.cs665.beverage;
 
-public class YellowTea extends TeaBeverage{
-    private String brewMessage = "Brewing your Yellow Tea";
+/**
+ * A class representing Yellow Tea. It is a great tea.
+ * It extends the Tea Beverage superclass, which implementes the Beverage Interface.
+ */
+public class YellowTea extends TeaBeverage {
+  /**
+   * Return the brew message.
+   *
+   * @return The specific brew message string.
+   */
+  public String getBrewMessage() {
+    return "Brewing your Yellow Tea";
+  }
 
-    public String getBrewMessage() {
-        return brewMessage;
-    }
-
-    @Override
-    public String toString() {
-        return "Yellow Tea";
-    }
+  /**
+   * Overriding the class' toString method to print something more readable.
+   *
+   * @return the string value of the class name.
+   */
+  @Override
+  public String toString() {
+    return "Yellow Tea";
+  }
 }
+

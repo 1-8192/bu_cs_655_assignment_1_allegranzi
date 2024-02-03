@@ -24,4 +24,3 @@ public class Espresso extends CoffeeBeverage {
     return "Espresso";
   }
 }
-

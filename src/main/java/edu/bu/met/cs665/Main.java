@@ -8,7 +8,7 @@
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.vendingMachine.BeverageVendingMachine;
+import edu.bu.met.cs665.machine.BeverageVendingMachine;
 
 /**
  * This is the Main class.

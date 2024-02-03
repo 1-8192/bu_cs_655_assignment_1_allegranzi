@@ -1,8 +1,17 @@
 package edu.bu.met.cs665.condiments;
 
+/**
+ * Sugar is a type of condiment.
+ */
 public class Sugar implements Condiment{
-    double price = 0.50;
+
+    /**
+     * class implementation for the getPrice method. Returns the price of sugar.
+     *
+     * @return the price of sugar.
+     */
     public double getPrice() {
-        return price;
+        return 0.50;
     }
 }
+

@@ -1,70 +1,72 @@
-package edu.bu.met.cs665.vendingMachine;
+package edu.bu.met.cs665.machine;
 
 import edu.bu.met.cs665.beverage.*;
 import edu.bu.met.cs665.condiments.Condiment;
 import edu.bu.met.cs665.condiments.Milk;
 import edu.bu.met.cs665.condiments.Sugar;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Class representing a beverage vending machine.
+ */
 public class BeverageVendingMachine implements VendingMachine {
-    Beverage selectedBeverage;
-    ArrayList<Condiment> condiments = new ArrayList<>();
-    Scanner inputScanner = new Scanner(System.in);
+  Beverage selectedBeverage;
+  ArrayList<Condiment> condiments = new ArrayList<>();
+  Scanner inputScanner = new Scanner(System.in);
 
-    public boolean registerOrder() {
-        String order = "";
+  public boolean registerOrder() {
+      String order = "";
 
-        do {
-            System.out.println("Would you like coffee or tea?");
-            order = inputScanner.nextLine();
-        } while (!order.equals("coffee") && !order.equals("tea"));
+      do {
+          System.out.println("Would you like coffee or tea?");
+          order = inputScanner.nextLine();
+      } while (!order.equals("coffee") && !order.equals("tea"));
 
-        if (order.equals("tea")) {
-            System.out.println("Would you like Black Tea, Green Tea, or Yellow Tea?");
-            String teaChoice = inputScanner.nextLine();
+      if (order.equals("tea")) {
+          System.out.println("Would you like Black Tea, Green Tea, or Yellow Tea?");
+          String teaChoice = inputScanner.nextLine();
 
-            switch (teaChoice) {
-                case "Black Tea":
-                    selectedBeverage = new BlackTea();
-                    break;
-                case "Green Tea":
-                    selectedBeverage = new GreenTea();
-                    break;
-                case "Yellow Tea":
-                    selectedBeverage = new YellowTea();
-                    break;
-                default:
-                    System.out.println("Thats is not a type of tea. We will make you a black tea.");
-                    selectedBeverage = new BlackTea();
-                    break;
-            }
-        } else if (order.equals("coffee")) {
-            System.out.println("Would you like an Americano, Espresso, or Latte Macchiato?");
-            String coffeeChoice = inputScanner.nextLine();
+          switch (teaChoice) {
+              case "Black Tea":
+                  selectedBeverage = new BlackTea();
+                  break;
+              case "Green Tea":
+                  selectedBeverage = new GreenTea();
+                  break;
+              case "Yellow Tea":
+                  selectedBeverage = new YellowTea();
+                  break;
+              default:
+                  System.out.println("Thats is not a type of tea. We will make you a black tea.");
+                  selectedBeverage = new BlackTea();
+                  break;
+          }
+      } else if (order.equals("coffee")) {
+          System.out.println("Would you like an Americano, Espresso, or Latte Macchiato?");
+          String coffeeChoice = inputScanner.nextLine();
 
-            switch (coffeeChoice) {
-                case "Americano":
-                    selectedBeverage = new Americano();
-                    break;
-                case "Espresso":
-                    selectedBeverage = new Espresso();
-                    break;
-                case "Latte Macchiato":
-                    selectedBeverage = new LatteMacchiato();
-                    break;
-                default:
-                    System.out.println("Thats is not a type of coffee. We will make you an espresso.");
-                    selectedBeverage = new Americano();
-                    break;
-            }
-        }
+          switch (coffeeChoice) {
+              case "Americano":
+                  selectedBeverage = new Americano();
+                  break;
+              case "Espresso":
+                  selectedBeverage = new Espresso();
+                  break;
+              case "Latte Macchiato":
+                  selectedBeverage = new LatteMacchiato();
+                  break;
+              default:
+                  System.out.println("Thats is not a type of coffee. We will make you an espresso.");
+                  selectedBeverage = new Americano();
+                  break;
+          }
+      }
 
-        System.out.println("Than you. You have selected " + selectedBeverage.toString());
-        return true;
-    };
+      System.out.println("Than you. You have selected " + selectedBeverage.toString());
+      return true;
+  };
 
     public void prepareOrder() {
         String milkCount = "";
