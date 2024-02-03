@@ -1,9 +1,9 @@
 /**
- * Name: FIRST_NAME LAST_NAME
+ * Name: ALESSANDRO ALLEGRANZI
  * Course: CS-665 Software Designs & Patterns
- * Date: MM/DD/YYYY
+ * Date: 02/08/2024
  * File Name: Main.java
- * Description: Write a description for this class
+ * Description: The Main executable class for the Fully Automatic Beverage Machine program.
  */
 
 package edu.bu.met.cs665;
@@ -22,17 +22,6 @@ public class Main {
    * However, please note that every assignment/final projects requires JUnit tests.
    */
   public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
+    System.out.println("Welcome to the vending machine");
   }
-
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
-  }
-
 }
