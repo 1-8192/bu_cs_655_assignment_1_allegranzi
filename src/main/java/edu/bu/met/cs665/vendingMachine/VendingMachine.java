@@ -7,6 +7,4 @@ public interface VendingMachine {
     double calculateOrderTotal();
 
     void prepareOrder();
-
-    void serveItem();
 }
