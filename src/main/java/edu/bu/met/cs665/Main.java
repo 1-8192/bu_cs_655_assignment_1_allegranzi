@@ -8,7 +8,7 @@
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.vendingMachine.BeverageVendingMachine;
 
 /**
  * This is the Main class.
@@ -22,6 +22,18 @@ public class Main {
    * However, please note that every assignment/final projects requires JUnit tests.
    */
   public static void main(String[] args) {
-    System.out.println("Welcome to the vending machine");
+    BeverageVendingMachine bevMachine = new BeverageVendingMachine();
+    System.out.println(FullyAutomatedBeverageMachineConstants.WELCOME_MESSAGE);
+
+    boolean condition = false;
+
+    do {
+      condition = bevMachine.registerOrder();
+    } while (!condition);
+
+    System.out.println("We've taken your order.");
+
+    bevMachine.prepareOrder();
+
   }
 }

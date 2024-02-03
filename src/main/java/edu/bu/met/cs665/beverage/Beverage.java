@@ -1,4 +1,4 @@
 package edu.bu.met.cs665.beverage;
 
-public interface beverage {
+public interface Beverage {
 }
