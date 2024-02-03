@@ -1,14 +1,27 @@
 package edu.bu.met.cs665.beverage;
 
-public class Espresso extends CoffeeBeverage{
-    private String brewMessage = "Brewing your espresso coffee";
+/**
+ * A class representing an Espresso coffee. It is a very strong coffee.
+ * It extends the coffee Beverage superclass, which implementes the Beverage Interface.
+ */
+public class Espresso extends CoffeeBeverage {
+  /**
+   * Return the brew message.
+   *
+   * @return The specific brew message string.
+   */
+  public String getBrewMessage() {
+    return "Brewing your Espresso coffee";
+  }
 
-    public String getBrewMessage() {
-        return brewMessage;
-    }
-
-    @Override
-    public String toString() {
-        return "Espresso";
-    }
+  /**
+   * Overriding the class' toString method to print something more readable.
+   *
+   * @return the string value of the class name.
+   */
+  @Override
+  public String toString() {
+    return "Espresso";
+  }
 }
+
