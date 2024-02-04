@@ -1,21 +1,33 @@
 package edu.bu.met.cs665.beverage;
 
 /**
- * Interface class for beverages used in beverage machines.
+ * Main Abstract super class for coffee drinks.
  */
-public interface Beverage {
+public abstract class Beverage {
+
+  public BrewMethod brewMethod;
+
+  public String type = "";
   /**
-   * Basic method used by class that implement the interface. Prints out a drink specific
-   * brew message.
-   *
-   * @return message string.
+   * Price for a coffee drink.
    */
-  String getBrewMessage();
+  private double price = 2.00;
 
   /**
-   * Retrieves the beverage price.
+   * Gets the price for the drink.
    *
-   * @return the price for the beverage.
+   * @return the price of the coffee drink.
    */
-  double getPrice();
+  public double getPrice() {
+    return price;
+  }
+
+  /**
+   * Gets the brew message for the drink.
+   *
+   * @return the brew message string.
+   */
+  public String getBrewMessage() {
+    return brewMethod.brewBeverage(type);
+  }
 }

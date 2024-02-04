@@ -5,15 +5,13 @@ package edu.bu.met.cs665.beverage;
  * and includes milk. It extends the coffee Beverage superclass, which implementes the
  * Beverage Interface.
  */
-public class LatteMacchiato extends CoffeeBeverage {
-
-  /**
-   * Return the brew message.
-   *
-   * @return The specific brew message string.
+public class LatteMacchiato extends Beverage {
+  /*
+   * Public constructor for the class. Instantiating the brewMethod class and type.
    */
-  public String getBrewMessage() {
-    return "Brewing your Latte Macchiato coffee";
+  public LatteMacchiato() {
+    type = "Latte Macchiato";
+    brewMethod = new PullCoffee();
   }
 
   /**
@@ -23,6 +21,6 @@ public class LatteMacchiato extends CoffeeBeverage {
    */
   @Override
   public String toString() {
-    return "Latte Macchiato";
+    return type;
   }
 }

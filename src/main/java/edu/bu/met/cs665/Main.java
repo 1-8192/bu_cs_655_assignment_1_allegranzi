@@ -37,7 +37,9 @@ public class Main {
 
     double total = bevMachine.calculateOrderTotal();
 
-    System.out.println("Your total is: " + total);
+    if (!total == 0.00) {
+      System.out.println("Your total is: " + total);
+    }
     System.out.println("Thank you for using the Hot Bev 5000 Fully Automatic Beverage Machine");
   }
 }

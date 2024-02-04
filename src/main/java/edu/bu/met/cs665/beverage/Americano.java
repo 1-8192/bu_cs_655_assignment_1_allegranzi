@@ -4,15 +4,18 @@ package edu.bu.met.cs665.beverage;
  * A class representing an Americano coffee. It is a longer pull and weaker than espresso.
  * It extends the coffee Beverage superclass, which implementes the Beverage Interface.
  */
-public class Americano extends CoffeeBeverage {
-
-  /**
-   * Return the brew message.
-   *
-   * @return The specific brew message string.
+public class Americano extends Beverage {
+  /*
+   * The type of coffee beverage.
    */
-  public String getBrewMessage() {
-    return "Brewing your Americano coffee";
+  private String type = "Americano";
+
+  /*
+   * Public constructor for the class. Instantiating the brewMethod class and type.
+   */
+  public Americano() {
+    type = "Americano";
+    brewMethod = new PullCoffee();
   }
 
   /**
@@ -22,6 +25,6 @@ public class Americano extends CoffeeBeverage {
    */
   @Override
   public String toString() {
-    return "Americano";
+    return type;
   }
 }

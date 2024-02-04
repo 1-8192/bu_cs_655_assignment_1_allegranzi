@@ -4,14 +4,13 @@ package edu.bu.met.cs665.beverage;
  * A class representing Yellow Tea. It is a great tea.
  * It extends the Tea Beverage superclass, which implementes the Beverage Interface.
  */
-public class YellowTea extends TeaBeverage {
-  /**
-   * Return the brew message.
-   *
-   * @return The specific brew message string.
+public class YellowTea extends Beverage {
+  /*
+   * Public constructor for the class. Instantiating the brewMethod class and type.
    */
-  public String getBrewMessage() {
-    return "Brewing your Yellow Tea";
+  public YellowTea() {
+    type = "Yellow Tea.";
+    brewMethod = new SteepTea();
   }
 
   /**
@@ -21,7 +20,7 @@ public class YellowTea extends TeaBeverage {
    */
   @Override
   public String toString() {
-    return "Yellow Tea";
+    return type;
   }
 }
 
