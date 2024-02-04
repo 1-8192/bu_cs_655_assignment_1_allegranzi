@@ -8,6 +8,6 @@ public class SteepTea implements BrewMethod{
    * @return message string.
    */
   public String brewBeverage(String teaType) {
-    return "Steeping your " + teaType + " tea. Patience is golden.";
+    return "Steeping your " + teaType + " . Patience is golden.";
   };
 }
