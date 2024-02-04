@@ -43,9 +43,9 @@ public class BeverageVendingMachine implements VendingMachine {
     do {
       System.out.println("Would you like coffee or tea?");
       order = inputScanner.nextLine();
-    } while (!order.toLowerCase().equals("coffee") && !order.toLowerCase().equals("tea"));
+    } while (!order.equalsIgnoreCase("Coffee") && !order.equalsIgnoreCase("Tea"));
 
-    if (order.equals("tea")) {
+    if (order.equalsIgnoreCase("tea")) {
       System.out.println("Would you like Black Tea, Green Tea, or Yellow Tea?");
       String teaChoice = inputScanner.nextLine();
 
@@ -64,7 +64,7 @@ public class BeverageVendingMachine implements VendingMachine {
           selectedBeverage = new BlackTea();
           break;
       }
-    } else if (order.toLowerCase().equals("coffee")) {
+    } else if (order.equalsIgnoreCase("coffee")) {
       System.out.println("Would you like an Americano, Espresso, or Latte Macchiato?");
       String coffeeChoice = inputScanner.nextLine();
 
@@ -80,7 +80,7 @@ public class BeverageVendingMachine implements VendingMachine {
           break;
         default:
           System.out.println("Thats is not a type of coffee. We will make you an espresso.");
-          selectedBeverage = new Americano();
+          selectedBeverage = new Espresso();
           break;
       }
     }
@@ -98,7 +98,7 @@ public class BeverageVendingMachine implements VendingMachine {
     System.out.println("would you like to add milk or sugar?");
     String input = inputScanner.nextLine();
 
-    if (!input.toLowerCase().equals("no")) {
+    if (!input.equalsIgnoreCase("no")) {
       System.out.println("How many milks would you like to add? (3 max)");
       milkCount = inputScanner.nextLine();
 
@@ -106,25 +106,25 @@ public class BeverageVendingMachine implements VendingMachine {
       sugarCount = inputScanner.nextLine();
     }
 
-    if (!milkCount.isEmpty() && Integer.valueOf(milkCount) > 3) {
+    if (!milkCount.isEmpty() && Integer.parseInt(milkCount) > 3) {
       milkCount = "3";
       System.out.println("We can only add in 3 milks, so that's all you get :-(");
     }
 
-    if (!sugarCount.isEmpty() && Integer.valueOf(sugarCount) > 3) {
+    if (!sugarCount.isEmpty() && Integer.parseInt(sugarCount) > 3) {
       sugarCount = "3";
       System.out.println("We can only add in 3 sugars, so that's all you get :-(");
     }
 
     try {
       if (!milkCount.isEmpty()) {
-        for (int i = 0; i < Integer.valueOf(milkCount); i++) {
+        for (int i = 0; i < Integer.parseInt(milkCount); i++) {
           condiments.add(new Milk());
         }
       }
 
       if (!sugarCount.isEmpty()) {
-        for (int i = 0; i < Integer.valueOf(sugarCount); i++) {
+        for (int i = 0; i < Integer.parseInt(sugarCount); i++) {
           condiments.add(new Sugar());
         }
       }

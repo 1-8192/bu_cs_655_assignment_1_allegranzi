@@ -26,15 +26,15 @@ public class Main {
 
     bevMachine.registerOrder();
 
-    System.out.println("We've taken your order.");
+    System.out.println(FullyAutomatedBeverageMachineConstants.ORDER_TAKEN);
 
     bevMachine.prepareOrder();
 
     double total = bevMachine.calculateOrderTotal();
 
     if (total != 0.00) {
-      System.out.println("Your total is: " + total);
+      System.out.println(FullyAutomatedBeverageMachineConstants.TOTAL_MESSAGE + total);
     }
-    System.out.println("Thank you for using the Hot Bev 5000 Fully Automatic Beverage Machine");
+    System.out.println(FullyAutomatedBeverageMachineConstants.BYE_MESSAGE);
   }
 }
