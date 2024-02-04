@@ -35,10 +35,9 @@ public class TestBeverageVendingMachine {
     vendingMachine.selectedBeverage = new Espresso();
     List<Condiment> condiments = Arrays.asList(new Milk(), new Sugar());
     vendingMachine.condiments = new ArrayList<>(condiments);
-    double total = vendingMachine.calculateOrderTotal();
     // assertEquals with a double is deprecated since double math is tricky. Adding in a delta as per:
     // https://stackoverflow.com/questions/5939788/junit-assertequalsdouble-expected-double-actual-double-epsilon
-    assertEquals(3.0, total, 0.01);
+    assertEquals(3.0, vendingMachine.calculateOrderTotal(), 0.01);
   }
 
   /**
@@ -48,9 +47,8 @@ public class TestBeverageVendingMachine {
   public void testCalculateOrderTotalException() {
     vendingMachine.selectedBeverage = new Espresso();
     vendingMachine.condiments = null;
-    double total = vendingMachine.calculateOrderTotal();
     // assertEquals with a double is deprecated since double math is tricky. Adding in a delta as per:
     // https://stackoverflow.com/questions/5939788/junit-assertequalsdouble-expected-double-actual-double-epsilon
-    assertEquals(0.00, total, 0.01);
+    assertEquals(0.00, vendingMachine.calculateOrderTotal(), 0.01);
   }
 }

@@ -5,6 +5,7 @@
  * File Name: VendingMachine.java
  * Description: Interface for a vending machine.
  */
+
 package edu.bu.met.cs665.machine;
 
 /**
@@ -13,8 +14,6 @@ package edu.bu.met.cs665.machine;
 public interface VendingMachine {
   /**
    * Takes an order from a customer.
-   *
-   * @return boolean flag whether the order went well or not.
    */
   void registerOrder();
 

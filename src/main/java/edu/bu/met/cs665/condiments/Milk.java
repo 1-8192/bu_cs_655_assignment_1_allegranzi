@@ -5,12 +5,13 @@
  * File Name: Milk.java
  * Description: Milk condiment class.
  */
+
 package edu.bu.met.cs665.condiments;
 
 /**
  * Milk is a type of condiment.
  */
-public class Milk implements Condiment{
+public class Milk implements Condiment {
 
   /**
    * class implementation for the getPrice method. Returns the price of milk.

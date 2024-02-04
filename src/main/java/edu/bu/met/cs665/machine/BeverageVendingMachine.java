@@ -5,13 +5,19 @@
  * File Name: BeverageVendingMachine.java
  * Description: Clas representing a beverage vending machine.
  */
+
 package edu.bu.met.cs665.machine;
 
-import edu.bu.met.cs665.beverage.*;
+import edu.bu.met.cs665.beverage.Americano;
+import edu.bu.met.cs665.beverage.Beverage;
+import edu.bu.met.cs665.beverage.BlackTea;
+import edu.bu.met.cs665.beverage.Espresso;
+import edu.bu.met.cs665.beverage.GreenTea;
+import edu.bu.met.cs665.beverage.LatteMacchiato;
+import edu.bu.met.cs665.beverage.YellowTea;
 import edu.bu.met.cs665.condiments.Condiment;
 import edu.bu.met.cs665.condiments.Milk;
 import edu.bu.met.cs665.condiments.Sugar;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -148,8 +154,8 @@ public class BeverageVendingMachine implements VendingMachine {
    */
   public double calculateOrderTotal() {
     try {
-      return Double.sum(selectedBeverage.getPrice(), condiments.stream().mapToDouble(Condiment::getPrice)
-            .sum());
+      return Double.sum(selectedBeverage.getPrice(), condiments.stream()
+                  .mapToDouble(Condiment::getPrice).sum());
     } catch (Exception e) {
       System.out.println("We ran into an issue calculating your total. Enjoy the drink on us!");
       return 0.00;

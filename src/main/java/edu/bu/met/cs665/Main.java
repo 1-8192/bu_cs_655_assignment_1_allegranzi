@@ -5,6 +5,7 @@
  * File Name: Main.java
  * Description: The Main executable class for the Fully Automatic Beverage Machine program.
  */
+
 package edu.bu.met.cs665;
 
 import edu.bu.met.cs665.machine.BeverageVendingMachine;

@@ -5,12 +5,13 @@
  * File Name: PullCoffee.java
  * Description: Class representing a brew method for making cofee.
  */
+
 package edu.bu.met.cs665.beverage;
 
 /**
  * Pull Coffee represents the brewing method for coffee.
  */
-public class PullCoffee implements BrewMethod{
+public class PullCoffee implements BrewMethod {
 
   /**
    * Prints out an informative message about how the coffee is being brewed.
@@ -19,5 +20,5 @@ public class PullCoffee implements BrewMethod{
    */
   public String brewBeverage(String coffeeType) {
     return "Pulling your " + coffeeType + " coffee. Enjoy the aroma";
-  };
+  }
 }

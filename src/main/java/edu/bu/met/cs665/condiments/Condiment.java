@@ -5,6 +5,7 @@
  * File Name: Condiment.java
  * Description: Condiment class interface.
  */
+
 package edu.bu.met.cs665.condiments;
 
 /**

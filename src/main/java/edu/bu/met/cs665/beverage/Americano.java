@@ -5,6 +5,7 @@
  * File Name: Americano.java
  * Description: Class representing an Americano coffee.
  */
+
 package edu.bu.met.cs665.beverage;
 
 /**
@@ -12,11 +13,6 @@ package edu.bu.met.cs665.beverage;
  * It extends the coffee Beverage superclass, which implementes the Beverage Interface.
  */
 public class Americano extends Beverage {
-  /*
-   * The type of coffee beverage.
-   */
-  private String type = "Americano";
-
   /*
    * Public constructor for the class. Instantiating the brewMethod class and type.
    */

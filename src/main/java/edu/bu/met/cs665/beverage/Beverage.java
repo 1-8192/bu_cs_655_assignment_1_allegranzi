@@ -5,6 +5,7 @@
  * File Name: Beverage.java
  * Description: The beverage abstract class to be extended by different types of coffee and tea.
  */
+
 package edu.bu.met.cs665.beverage;
 
 /**

@@ -6,6 +6,7 @@
  * Description: BrewMethod interface. Used as part of the Strategy design pattern for beverage
  * construciton.
  */
+
 package edu.bu.met.cs665.beverage;
 
 /**

@@ -5,6 +5,7 @@
  * File Name: YellowTea.java
  * Description: Class representing a yellow tea.
  */
+
 package edu.bu.met.cs665.beverage;
 
 /**
@@ -16,7 +17,7 @@ public class YellowTea extends Beverage {
    * Public constructor for the class. Instantiating the brewMethod class and type.
    */
   public YellowTea() {
-    type = "Yellow Tea.";
+    type = "Yellow Tea";
     brewMethod = new SteepTea();
   }
 

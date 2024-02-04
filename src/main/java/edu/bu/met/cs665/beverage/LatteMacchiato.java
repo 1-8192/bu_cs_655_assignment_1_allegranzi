@@ -5,6 +5,7 @@
  * File Name: LatteMacchiato.java
  * Description: Class representing a Latte Macchiato coffee.
  */
+
 package edu.bu.met.cs665.beverage;
 
 /**
