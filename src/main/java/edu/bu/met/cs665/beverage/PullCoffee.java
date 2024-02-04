@@ -18,6 +18,6 @@ public class PullCoffee implements BrewMethod{
    * @return message string.
    */
   public String brewBeverage(String coffeeType) {
-    return "Pulling your " + coffeeType + " cofee. Enjoy the aroma";
+    return "Pulling your " + coffeeType + " coffee. Enjoy the aroma";
   };
 }

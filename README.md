@@ -25,6 +25,8 @@ easy for others to read and maintain.
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
 
+I used the Strategy design pattern we discussed in the second module. 
+
 
 # Maven Commands
 
