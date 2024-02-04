@@ -7,7 +7,14 @@
 | Assignment # | 1                          |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+
+The ojbective of this assignment is to create an application that represents an beverage vending machine that reliably serves high-quality hot beverages.
+The machine should serve Americano, Espresso, and Latte Macchiato coffes as well as Black Tea, Yellow tea, and Green Tea teas.
+Customers also have the option of adding 0-3 portions of milk and sugar, respectively, to their drink. The Beverage vending machine also displays the total cost of the beverage selected by the user.
+
+A user can interact with the machine via simple CLI inputs. 
+
+![Example interaction](./images/screenshot.png)
 
 # GitHub Repository Link:
 https://github.com/1-8192/bu_cs_665_assignment_1_allegranzi
@@ -109,6 +116,10 @@ mvn checkstyle:checkstyle
 The HTML page will be found at the following location:
 `target/site/checkstyle.html`
 
+## Running the Application
+
+### From an IDE
+Open the Main.java class file, and using your IDE UI run the class. In IntelliJ there is a "play" button.
 
 
 
