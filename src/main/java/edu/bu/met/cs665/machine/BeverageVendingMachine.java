@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: BeverageVendingMachine.java
+ * Description: Clas representing a beverage vending machine.
+ */
 package edu.bu.met.cs665.machine;
 
 import edu.bu.met.cs665.beverage.*;
@@ -17,10 +24,20 @@ public class BeverageVendingMachine implements VendingMachine {
    */
   Beverage selectedBeverage;
 
+  /**
+   * Selected Condiments.
+   */
   ArrayList<Condiment> condiments = new ArrayList<>();
+
+  /**
+   * Scanner instance used to record user input.
+   */
   Scanner inputScanner = new Scanner(System.in);
 
-  public boolean registerOrder() {
+  /**
+   * Takes an order from a customer for a beverage.
+   */
+  public void registerOrder() {
     String order = "";
 
     do {
@@ -69,11 +86,11 @@ public class BeverageVendingMachine implements VendingMachine {
     }
 
     System.out.println("Thank you. You have selected " + selectedBeverage.toString());
-    return true;
   }
 
-  ;
-
+  /**
+   * Prepares the beverage order by adding condiments if necessary.
+   */
   public void prepareOrder() {
     String milkCount = "";
     String sugarCount = "";
@@ -124,6 +141,11 @@ public class BeverageVendingMachine implements VendingMachine {
     }
   }
 
+  /**
+   * Calcualtes the total for the order including condiments.
+   *
+   * @return the total price for the order.
+   */
   public double calculateOrderTotal() {
     try {
       return Double.sum(selectedBeverage.getPrice(), condiments.stream().mapToDouble(Condiment::getPrice)

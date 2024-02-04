@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: Americano.java
+ * Description: Class representing an Americano coffee.
+ */
 package edu.bu.met.cs665.beverage;
 
 /**

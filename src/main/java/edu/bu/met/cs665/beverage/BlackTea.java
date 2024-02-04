@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: BlackTea.java
+ * Description: Class representing a black tea.
+ */
 package edu.bu.met.cs665.beverage;
 
 /**

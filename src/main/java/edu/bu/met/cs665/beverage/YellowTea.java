@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: YellowTea.java
+ * Description: Class representing a yellow tea.
+ */
 package edu.bu.met.cs665.beverage;
 
 /**

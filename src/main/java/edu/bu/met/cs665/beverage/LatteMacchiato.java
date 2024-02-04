@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: LatteMacchiato.java
+ * Description: Class representing a Latte Macchiato coffee.
+ */
 package edu.bu.met.cs665.beverage;
 
 /**

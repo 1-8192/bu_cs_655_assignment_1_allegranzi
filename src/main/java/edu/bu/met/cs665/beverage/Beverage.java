@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: Beverage.java
+ * Description: The beverage abstract class to be extended by different types of coffee and tea.
+ */
 package edu.bu.met.cs665.beverage;
 
 /**
@@ -5,9 +12,16 @@ package edu.bu.met.cs665.beverage;
  */
 public abstract class Beverage {
 
+  /**
+   * The BrewMethod implementation.
+   */
   public BrewMethod brewMethod;
 
+  /**
+   * The type of beverage, e.g - "espresso"
+   */
   public String type = "";
+
   /**
    * Price for a coffee drink.
    */

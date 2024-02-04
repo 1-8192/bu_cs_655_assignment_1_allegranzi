@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: Milk.java
+ * Description: Milk condiment class.
+ */
 package edu.bu.met.cs665.condiments;
 
 /**

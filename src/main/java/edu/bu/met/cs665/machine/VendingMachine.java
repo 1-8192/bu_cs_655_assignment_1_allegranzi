@@ -1,3 +1,10 @@
+/**
+ * Name: ALESSANDRO ALLEGRANZI
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 02/08/2024
+ * File Name: VendingMachine.java
+ * Description: Interface for a vending machine.
+ */
 package edu.bu.met.cs665.machine;
 
 /**
@@ -9,7 +16,7 @@ public interface VendingMachine {
    *
    * @return boolean flag whether the order went well or not.
    */
-  boolean registerOrder();
+  void registerOrder();
 
   /**
    * Calculates the order total by adding in selections.
