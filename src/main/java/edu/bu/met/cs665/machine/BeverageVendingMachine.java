@@ -28,17 +28,17 @@ public class BeverageVendingMachine implements VendingMachine {
   /**
    * The Beverage.
    */
-  Beverage selectedBeverage;
+  protected Beverage selectedBeverage;
 
   /**
    * Selected Condiments.
    */
-  ArrayList<Condiment> condiments = new ArrayList<>();
+  protected ArrayList<Condiment> condiments = new ArrayList<>();
 
   /**
    * Scanner instance used to record user input.
    */
-  Scanner inputScanner = new Scanner(System.in);
+  protected Scanner inputScanner = new Scanner(System.in);
 
   /**
    * Takes an order from a customer for a beverage.

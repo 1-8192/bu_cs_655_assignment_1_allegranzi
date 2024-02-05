@@ -9,6 +9,7 @@
 package edu.bu.met.cs665;
 
 import edu.bu.met.cs665.machine.BeverageVendingMachine;
+import edu.bu.met.cs665.machine.VendingMachine;
 
 /**
  * This is the Main executable class.
@@ -23,7 +24,7 @@ public class Main {
    */
   public static void main(String[] args) {
     // Instantiating the beverage machine.
-    BeverageVendingMachine bevMachine = new BeverageVendingMachine();
+    VendingMachine bevMachine = new BeverageVendingMachine();
 
     // Guiding user through CLI inputs to place an order.
     System.out.println(FullyAutomatedBeverageMachineConstants.WELCOME_MESSAGE);

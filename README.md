@@ -8,11 +8,12 @@
 
 # Assignment Overview
 
-The ojbective of this assignment is to create an application that represents an beverage vending machine that reliably serves high-quality hot beverages.
-The machine should serve Americano, Espresso, and Latte Macchiato coffes as well as Black Tea, Yellow tea, and Green Tea teas.
-Customers also have the option of adding 0-3 portions of milk and sugar, respectively, to their drink. The Beverage vending machine also displays the total cost of the beverage selected by the user.
+The ojbective of this assignment is to create an application that represents a beverage vending machine that reliably serves high-quality hot beverages.
+The machine serves Americano, Espresso, and Latte Macchiato coffes as well as Black Tea, Yellow tea, and Green Tea teas.
+Customers also have the option of adding 0-3 portions of milk and sugar, respectively, to their drink (max 6 total condiments). The Beverage vending machine also displays the total cost of the beverage selected by the user.
 
-A user can interact with the machine via simple CLI inputs. 
+The assignment specified that user interaction was optional, but I built out very simple terminal interactions in order to directly test the application (in addition to unit tests).
+A user can interact with the machine via simple CLI inputs. Please see the screenshot below:
 
 ![Example interaction](./images/screenshot.png)
 
@@ -26,13 +27,37 @@ For each assignment, please answer the following:
 
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.
+
+My implementation is not perfect, but it still allows for a decent amount in flexibility for adding new features to the application. I created an interface for vending machines 
+that can me implemented by various vending machine types. Right now the application only serves coffee from a beverage vending machine, but if food or snack vending machines needed to be added,
+they could simply extend the public interface and the Main class could interact with the new machine using the same methods as before.
+
+Similarly, condiments right now are very simple classes. In fact, they're probably too simple to really be separate classes for this implementation, but setting up Milk and Sugar as different classes that 
+implement the condiment interface makes flexibility and extensibility in the long term easier. The methods by which other classes interact with condiments can be managed by the interface, and future condiment classes are easy to implement following that template.
+
+The beverage package features a lot of classes already, but adding new object types is also very easy. A new beverage would need to extend the Beverage superclass, and just requires the appropriate brew method to be included.
+
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
+
+I believe the main advantage of my implementation lies in the use of interfaces to define public contracts between classes. 
+Interfaces provide clear names and return values for methods. My application involves some wordy CLI interactions and 
+conditional chains, but those are all provided via class methods, and are not hanging around in the Main executable class. The interfaces and superclasses included also make
+building out new objects very straightforward and clear.
+
 - Describe how you have avoided duplicated code and why it is important.
+
+Avoiding duplicate code is important to reduce lines of redundant code and increase readability. The Beverage superclass and the strategy pattern implemented for the brew method greatly reduced the amount
+of repetitive code I would have had to write out for the 6 individual beverage classes, since I didn't have to rewrite the brew method for every individual class.
+
+
+
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
 
-I used the Strategy design pattern we discussed in the second module. 
+I used the Strategy design pattern we discussed in the second module. Building out the beverage superclass and coffee and teas subclasses, I thought it would be a good opportunity to practice the pattern.
+Since I was creating various specific coffee and tea classes, but brewing methods would be shared among those coffee and tea types, it seemed a good opportunity. By using the Strategy design pattern, I used an interface for brew method that
+I extended in 2 classes, to represent steeping tea and pulling coffee. This way I could insert those two brew methods instead of repeating the same string values for every coffee and tea class.
 
 
 # Maven Commands

@@ -16,12 +16,12 @@ public abstract class Beverage {
   /**
    * The BrewMethod implementation.
    */
-  public BrewMethod brewMethod;
+  protected BrewMethod brewMethod;
 
   /**
    * The type of beverage, e.g - "espresso"
    */
-  public String type = "";
+  protected String type = "";
 
   /**
    * Price for a coffee drink.
