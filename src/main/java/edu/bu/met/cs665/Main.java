@@ -17,10 +17,7 @@ import edu.bu.met.cs665.machine.VendingMachine;
 public class Main {
 
   /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
+   * A main method to run the Fully Automated Beverage Machine.
    */
   public static void main(String[] args) {
     // Instantiating the beverage machine.

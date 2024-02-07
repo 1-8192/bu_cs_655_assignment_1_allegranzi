@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * testing the Americano coffe class. Only testing this coffee class, since testing the others
+ * testing the Americano coffee class. Only testing this coffee class, since testing the others
  * would be a lot of redundancy. And yes, that's a design red flag, but there's a deadline :-)
  */
 public class TestAmericano {

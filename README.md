@@ -8,9 +8,9 @@
 
 # Assignment Overview
 
-The ojbective of this assignment is to create an application that represents a beverage vending machine that reliably serves high-quality hot beverages.
+The objective of this assignment is to create an application that represents a beverage vending machine that reliably serves high-quality hot beverages.
 The machine serves Americano, Espresso, and Latte Macchiato coffes as well as Black Tea, Yellow tea, and Green Tea teas.
-Customers also have the option of adding 0-3 portions of milk and sugar, respectively, to their drink (max 6 total condiments). The Beverage vending machine also displays the total cost of the beverage selected by the user.
+Customers also have the option of adding 0-3 portions of milk and sugar to their drink (max 6 total condiments). The Beverage vending machine also displays the total cost of the beverage selected by the user.
 
 The assignment specified that user interaction was optional, but I built out very simple terminal interactions in order to directly test the application (in addition to unit tests).
 A user can interact with the machine via simple CLI inputs. Please see the screenshot below:
@@ -40,17 +40,18 @@ The beverage package features a lot of classes already, but adding new object ty
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
 
-I believe the main advantage of my implementation lies in the use of interfaces to define public contracts between classes. 
-Interfaces provide clear names and return values for methods. My application involves some wordy CLI interactions and 
+The main advantage of my implementation lies in the use of interfaces to define public contracts between classes. 
+Interfaces provide clear names and return values for methods that make the code readable and clear. My application involves some wordy CLI interactions and 
 conditional chains, but those are all provided via class methods, and are not hanging around in the Main executable class. The interfaces and superclasses included also make
 building out new objects very straightforward and clear.
 
 - Describe how you have avoided duplicated code and why it is important.
 
-Avoiding duplicate code is important to reduce lines of redundant code and increase readability. The Beverage superclass and the strategy pattern implemented for the brew method greatly reduced the amount
-of repetitive code I would have had to write out for the 6 individual beverage classes, since I didn't have to rewrite the brew method for every individual class.
+Avoiding duplicate code is important to reduce lines of redundant code and increase readability. Maintenance and triaging bugs is much easier is less-verbose code.
+The Beverage superclass and the strategy pattern implemented for the brew method greatly reduced the amount of repetitive code I would have had to write out for the 6 individual beverage classes, since I didn't have to rewrite the brew method for every individual class.
 
-
+There is still some opportunity to reduce repetitive code, but I opted for extensibility and flexibility with classes and interfaces at this stage, and as a result some of the simpler classes
+do still repeat some code.
 
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
