@@ -60,6 +60,9 @@ I used the Strategy design pattern we discussed in the second module. Building o
 Since I was creating various specific coffee and tea classes, but brewing methods would be shared among those coffee and tea types, it seemed a good opportunity. By using the Strategy design pattern, I used an interface for brew method that
 I extended in 2 classes, to represent steeping tea and pulling coffee. This way I could insert those two brew methods instead of repeating the same string values for every coffee and tea class.
 
+## Diagrams
+
+The UML diagram for the application was created on draw.io. A PDF copy of the diagram is available ![here](./diagrams/cs_665_assignment_1.pdf)
 
 # Maven Commands
 
