@@ -51,4 +51,27 @@ public class TestBeverageVendingMachine {
     // https://stackoverflow.com/questions/5939788/junit-assertequalsdouble-expected-double-actual-double-epsilon
     assertEquals(0.00, vendingMachine.calculateOrderTotal(), 0.01);
   }
+
+  /**
+   * Testing the addCondiment method.
+   */
+  @Test
+  public void testAddCondiment() {
+    // Adding 2 sugars adds 2 sugars to the array.
+    vendingMachine.condiments = new ArrayList<>();
+    vendingMachine.addCondiments("sugar", 2);
+    assertEquals(vendingMachine.condiments.size(), 2);
+
+    // Attempting to add more than 3 of a condiment adds only 3 condiments.
+    vendingMachine.condiments = new ArrayList<>();
+    vendingMachine.addCondiments("milk", 25);
+    assertEquals(vendingMachine.condiments.size(), 3);
+
+    // Attempting to add more than 6 total condiments to the class condiment list.
+    List<Condiment> condiments = Arrays.asList(new Milk(), new Milk(), new Milk(),
+          new Sugar(), new Sugar(), new Sugar());
+    vendingMachine.condiments = new ArrayList<>(condiments);
+    vendingMachine.addCondiments("milk", 1);
+    assertEquals(vendingMachine.condiments.size(), 6);
+  }
 }

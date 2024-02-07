@@ -101,59 +101,44 @@ public class BeverageVendingMachine implements VendingMachine {
    * Prepares the beverage order by adding condiments if necessary.
    */
   public void prepareOrder() {
-    String milkCount = "";
-    String sugarCount = "";
+    int milkCount = 0;
+    int sugarCount = 0;
 
     System.out.println(FullyAutomatedBeverageMachineConstants.CONDIMENT_ASK);
     String input = inputScanner.nextLine();
 
     if (!input.equalsIgnoreCase("no")) {
       System.out.println(FullyAutomatedBeverageMachineConstants.MILK_QUANTITY);
-      milkCount = inputScanner.nextLine();
+      milkCount = Integer.valueOf(inputScanner.nextLine());
+      // If the customer asks for more than 3 milks, we print an informative message and only add 3.
+      if (milkCount > 3) {
+        System.out.println(FullyAutomatedBeverageMachineConstants.TOO_MUCH_MILK);
+      }
+      addCondiments("milk", milkCount);
 
+      // If the customer asks for more than 3 sugars, we print an informative
+      // message and only add 3.
       System.out.println(FullyAutomatedBeverageMachineConstants.SUGAR_QUANTITY);
-      sugarCount = inputScanner.nextLine();
-    }
-
-    // If milk and sugar requestes is more than 3 each,
-    // we are letting the client know and just adding 3.
-    if (!milkCount.isEmpty() && Integer.parseInt(milkCount) > 3) {
-      milkCount = "3";
-      System.out.println(FullyAutomatedBeverageMachineConstants.TOO_MUCH_MILK);
-    }
-
-    if (!sugarCount.isEmpty() && Integer.parseInt(sugarCount) > 3) {
-      sugarCount = "3";
-      System.out.println(FullyAutomatedBeverageMachineConstants.TOO_MUCH_SUGAR);
-    }
-
-    try {
-      if (!milkCount.isEmpty()) {
-        for (int i = 0; i < Integer.parseInt(milkCount); i++) {
-          condiments.add(new Milk());
-        }
+      sugarCount = Integer.valueOf(inputScanner.nextLine());
+      if (sugarCount > 3) {
+        System.out.println(FullyAutomatedBeverageMachineConstants.TOO_MUCH_SUGAR);
       }
+      addCondiments("sugar", sugarCount);
 
-      if (!sugarCount.isEmpty()) {
-        for (int i = 0; i < Integer.parseInt(sugarCount); i++) {
-          condiments.add(new Sugar());
-        }
-      }
-    } catch (Exception e) {
-      System.out.println("ran into an issue preparing your drink " + e.getMessage());
     }
 
     System.out.println(selectedBeverage.getBrewMessage());
-    if (!milkCount.isEmpty()) {
-      System.out.println("Adding in " + milkCount + " milks.");
+    if (milkCount > 0) {
+      System.out.println("Adding in " + Math.min(milkCount, 3) + " milks.");
     }
-    if (!sugarCount.isEmpty()) {
-      System.out.println("Adding in " + sugarCount + " sugars.");
+    if (sugarCount > 0) {
+      System.out.println("Adding in " + Math.min(sugarCount, 3) + " sugars.");
     }
   }
 
   /**
-   * Calculates the total for the order including condiments.
+   * Calculates the total for the order including condiments. Returns 0.00 as the price
+   * if we encunter an error.
    *
    * @return the total price for the order.
    */
@@ -165,6 +150,27 @@ public class BeverageVendingMachine implements VendingMachine {
     } catch (Exception e) {
       System.out.println(FullyAutomatedBeverageMachineConstants.CALCULATION_ERROR);
       return 0.00;
+    }
+  }
+
+  /**
+   * Adds condiments to the list of condiments. 6 max condiments, 3 max each of milk and sugar.
+   */
+  public void addCondiments(String type, int amount) {
+    // Checking if we already have the max 6 condiments allowed.
+    if (condiments.size() == 6) {
+      return;
+    }
+
+    int limit = Math.min(amount, 3);
+    if (type.equalsIgnoreCase("milk")) {
+      for (int i = 0; i < limit; i++) {
+        condiments.add(new Milk());
+      }
+    } else if (type.equalsIgnoreCase("sugar")) {
+      for (int i = 0; i < limit; i++) {
+        condiments.add(new Sugar());
+      }
     }
   }
 }

@@ -9,7 +9,7 @@
 # Assignment Overview
 
 The objective of this assignment is to create an application that represents a beverage vending machine that reliably serves high-quality hot beverages.
-The machine serves Americano, Espresso, and Latte Macchiato coffes as well as Black Tea, Yellow tea, and Green Tea teas.
+The machine serves Americano, Espresso, and Latte Macchiato coffees as well as Black Tea, Yellow tea, and Green Tea teas.
 Customers also have the option of adding 0-3 portions of milk and sugar to their drink (max 6 total condiments). The Beverage vending machine also displays the total cost of the beverage selected by the user.
 
 The assignment specified that user interaction was optional, but I built out very simple terminal interactions in order to directly test the application (in addition to unit tests).
@@ -45,10 +45,17 @@ Interfaces provide clear names and return values for methods that make the code 
 conditional chains, but those are all provided via class methods, and are not hanging around in the Main executable class. The interfaces and superclasses included also make
 building out new objects very straightforward and clear.
 
+I also used built-in type and data structure methods when possible, to reduce the amount of custom code and use industry-known functionality.
+For example, instead of manually comparing 2 integer values to determine the lower one, I used the Math.min() method.
+
 - Describe how you have avoided duplicated code and why it is important.
 
 Avoiding duplicate code is important to reduce lines of redundant code and increase readability. Maintenance and triaging bugs is much easier is less-verbose code.
-The Beverage superclass and the strategy pattern implemented for the brew method greatly reduced the amount of repetitive code I would have had to write out for the 6 individual beverage classes, since I didn't have to rewrite the brew method for every individual class.
+The Beverage superclass and the strategy pattern implemented for the brew method greatly reduced the amount of repetitive code I would have had to write out for the 
+6 individual beverage classes, since I didn't have to rewrite the brew method for every individual class.
+
+Another example is the addCondiment() method in the BeverageVendingMachine class, where I wrote out a reusable method instead
+of adding condiments to the class variable array manually each time within the prepareOrder() method.
 
 There is still some opportunity to reduce repetitive code, but I opted for extensibility and flexibility with classes and interfaces at this stage, and as a result some of the simpler classes
 do still repeat some code.
